@@ -1,14 +1,16 @@
 export function maxProfit(prices: number[]): number {
-	let max = -Infinity;
+	let buyPrice = prices[0];
+	let profit = 0;
 
-	for(let i=0; i<prices.length; i++) {
-		for(let j=i; j<prices.length; j++) {
-			const profit = prices[j] - prices[i];
-			if (profit > max) {
-				max = profit;
-			}
-		};
-	};
+	prices.forEach((price) => {
+		if(buyPrice > price) {
+			buyPrice = price;
+		}
 
-	return max;
+		profit = Math.max(profit, price - buyPrice);
+
+		console.log({buyPrice, profit})
+	})
+
+	return profit;
 };
