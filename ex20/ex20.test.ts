@@ -11,6 +11,6 @@ const TEST_CASES: TestCase[] = [
 ];
 
 
-it.each(TEST_CASES)('nums = $nums, target = $target, result = $result', ({ s, result }) => {
+it.each(TEST_CASES)('s = $s result = $result', ({ s, result }) => {
 	expect(isValid(s)).toBe(result);
 });
