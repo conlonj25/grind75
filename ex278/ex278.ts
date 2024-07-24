@@ -3,21 +3,16 @@ function isBadVersionGenerator(bad: number) {
 }
 
 export function solution(n: number, bad: number) {
-	const nums = [...Array(n).keys()].map(n => n+1);
 	const isBadVersion = isBadVersionGenerator(bad);
 
-	const f = (arr: number[]) => {
-		if(arr.length === 1) return arr[0];
-
-		const midIndex = Math.floor((arr.length - 1) / 2);
-		const midValue = arr[midIndex];
-
-		const left = arr.slice(0, midIndex+1);
-		const right = arr.slice(midIndex+1);
-		const next = isBadVersion(midValue) ? left : right;
+	const f = ([min, max]: number[]) => {
+		if(max-min === 0) return max;
+		
+		const mid = Math.floor((min + max) / 2);
+		const next = isBadVersion(mid) ? [min, mid] : [mid+1, max];
 
 		return f(next);
 	}
 
-	return f(nums);
+	return f([1, n]);
 };
