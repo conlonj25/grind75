@@ -8,8 +8,6 @@ export function maxProfit(prices: number[]): number {
 		}
 
 		profit = Math.max(profit, price - buyPrice);
-
-		console.log({buyPrice, profit})
 	})
 
 	return profit;

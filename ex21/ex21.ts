@@ -35,7 +35,7 @@ export const mergeTwoLists = (list1: ListNode, list2: ListNode): ListNode => {
 	let l1: ListNode | null = list1;
 	let l2: ListNode | null = list2;
 
-	let head = new ListNode(0);
+	const head = new ListNode(0);
 	let tail = head;
 
 	while (l1 && l2) {
