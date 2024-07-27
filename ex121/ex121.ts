@@ -3,12 +3,12 @@ export function maxProfit(prices: number[]): number {
 	let profit = 0;
 
 	prices.forEach((price) => {
-		if(buyPrice > price) {
+		if (buyPrice > price) {
 			buyPrice = price;
 		}
 
 		profit = Math.max(profit, price - buyPrice);
-	})
+	});
 
 	return profit;
-};
+}

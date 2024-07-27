@@ -7,10 +7,10 @@ export function twoSum(nums: number[], target: number): number[] {
 
 		if (checkMap !== undefined) {
 			return [checkMap, i];
-		};
+		}
 
 		map.set(nums[i], i);
 	}
 
 	return [];
-};
+}

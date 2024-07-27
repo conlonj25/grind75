@@ -1,9 +1,9 @@
 export class ListNode {
-	val: number
-	next: ListNode | null
+	val: number;
+	next: ListNode | null;
 	constructor(val?: number, next?: ListNode | null) {
-		this.val = (val === undefined ? 0 : val)
-		this.next = (next === undefined ? null : next)
+		this.val = val === undefined ? 0 : val;
+		this.next = next === undefined ? null : next;
 	}
 }
 
@@ -29,7 +29,7 @@ export const listNodeToArray = (input: ListNode): number[] => {
 	}
 
 	return result;
-}
+};
 
 export const mergeTwoLists = (list1: ListNode, list2: ListNode): ListNode => {
 	let l1: ListNode | null = list1;

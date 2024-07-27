@@ -1,15 +1,22 @@
-import { ListNode, arrayToListNode, listNodeToArray, mergeTwoLists } from "./ex21";
+import {
+	ListNode,
+	arrayToListNode,
+	listNodeToArray,
+	mergeTwoLists,
+} from './ex21';
 
 describe('arrayToListNode', () => {
 	it('should return correctly for an empty array', () => {
 		const expectedResult = {
 			val: 0,
 			next: null,
-		}
+		};
 
 		const actualResult = arrayToListNode([]);
 
-		expect(JSON.stringify(actualResult)).toStrictEqual(JSON.stringify(expectedResult));
+		expect(JSON.stringify(actualResult)).toStrictEqual(
+			JSON.stringify(expectedResult)
+		);
 	});
 
 	it('should return correctly for an expected array', () => {
@@ -24,14 +31,16 @@ describe('arrayToListNode', () => {
 					next: {
 						val: 4,
 						next: null,
-					}
-				}
-			}
-		}
+					},
+				},
+			},
+		};
 
 		const actualResult = arrayToListNode(input);
 
-		expect(JSON.stringify(actualResult)).toStrictEqual(JSON.stringify(expectedResult));
+		expect(JSON.stringify(actualResult)).toStrictEqual(
+			JSON.stringify(expectedResult)
+		);
 	});
 });
 
@@ -53,14 +62,12 @@ describe('listNodeToArray', () => {
 					next: {
 						val: 4,
 						next: null,
-					}
-				}
-			}
-		}
+					},
+				},
+			},
+		};
 
 		expect(listNodeToArray(input)).toStrictEqual([1, 2, 3, 4]);
-
-
 	});
 });
 
@@ -73,8 +80,8 @@ describe('listNodeToArray', () => {
 				next: {
 					val: 3,
 					next: null,
-				}
-			}
+				},
+			},
 		};
 
 		const l2 = {
@@ -84,8 +91,8 @@ describe('listNodeToArray', () => {
 				next: {
 					val: 4,
 					next: null,
-				}
-			}
+				},
+			},
 		};
 
 		const expectedResult = {
@@ -102,17 +109,17 @@ describe('listNodeToArray', () => {
 								val: 4,
 								next: null,
 							},
-						}
+						},
 					},
-				}
-			}
-		}
+				},
+			},
+		};
 
 		const actualResult = mergeTwoLists(l1, l2);
 
-		expect(JSON.stringify(actualResult)).toStrictEqual(JSON.stringify(expectedResult));
-
-
+		expect(JSON.stringify(actualResult)).toStrictEqual(
+			JSON.stringify(expectedResult)
+		);
 	});
 
 	it('should correctly merge two lists of different lengths', () => {
@@ -123,8 +130,8 @@ describe('listNodeToArray', () => {
 				next: {
 					val: 3,
 					next: null,
-				}
-			}
+				},
+			},
 		};
 
 		const l2 = {
@@ -140,11 +147,11 @@ describe('listNodeToArray', () => {
 							next: {
 								val: 15,
 								next: null,
-							}
-						}
-					}
-				}
-			}
+							},
+						},
+					},
+				},
+			},
 		};
 
 		const expectedResult = {
@@ -166,20 +173,20 @@ describe('listNodeToArray', () => {
 										next: {
 											val: 15,
 											next: null,
-										}
-									}
-								}
+										},
+									},
+								},
 							},
 						},
-					}
+					},
 				},
-			}
-		}
+			},
+		};
 
 		const actualResult = mergeTwoLists(l1, l2);
 
-		expect(JSON.stringify(actualResult)).toStrictEqual(JSON.stringify(expectedResult));
-
-
+		expect(JSON.stringify(actualResult)).toStrictEqual(
+			JSON.stringify(expectedResult)
+		);
 	});
 });
